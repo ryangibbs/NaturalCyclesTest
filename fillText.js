@@ -21,12 +21,8 @@ $.fn.fillText = function(options) {
     // Get style
     var style = window.getComputedStyle($text[0], null).getPropertyValue('font-size');
     var currentFontSize = parseFloat(style);
-    console.log(currentFontSize);
     // Keeps it in a ratio
     var calc = $this.width() / $text.width() * currentFontSize;
-    console.log($this.width());
-    console.log($text.width());
-    console.log(calc);
     // Get the value and make sure it is in range
     var newFontPixels = Math.min(Math.max(calc, settings.minFontPixels), settings.maxFontPixels);
     // Update
