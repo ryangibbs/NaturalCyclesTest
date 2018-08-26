@@ -16,11 +16,18 @@ $(function() {
   }
 
   var init = function() {
-    input.value = sessionStorage.getItem('input-text');
-    slider.value = sessionStorage.getItem('slider-value');
-    sliderChanged();
+    inputVal = sessionStorage.getItem('input-text');
+    if (inputVal) {
+      input.value = inputVal;
+    }
+
+    sliderVal = sessionStorage.getItem('slider-value');
+    if(sliderVal) {
+      slider.value = sliderVal;
+      sliderChanged();
+    }
   }();
-  
+
   $('#output').fillText({
     textSource: 'text-input',
     maxFontPixels: 46
